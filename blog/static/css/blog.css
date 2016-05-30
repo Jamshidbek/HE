@@ -18,6 +18,10 @@ body {
     text-decoration: none;
 }
 
+.page-header h2, .page-header h2 a, .page-header h2 a:visited, .page-header h2 a:active {
+    color: #ffffff;
+}
+
 .content {
     margin-left: 40px;
 }
