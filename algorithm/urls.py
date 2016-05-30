@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.algorithm_list, name='algorithm_list'),
-    # url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
-    # url(r'^post/new/$', views.post_new, name='post_new'),
-    # url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
+    url(r'^rsa/$', views.rsa_view, name='rsa'),
+    url(r'^rsa/(?P<pk>\d+)/$', views.rsa_result, name='rsa_result'),
 ]
