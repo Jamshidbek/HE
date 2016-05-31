@@ -1,0 +1,14 @@
+{% extends 'algorithm/base.html' %}
+
+{% block content %}
+    <div>
+        <p>A: {{ paillier.a }}</p>
+        <p>B: {{ paillier.b }}</p>
+        <p>Public key: {{ paillier.pub }}</p>
+        <p>Private key: {{ paillier.priv }}</p>
+        <p>A1: {{ paillier.a1 }}</p>
+        <p>B1: {{ paillier.b1 }}</p>
+        <p>A1 + B1: {{ paillier.a1b1 }}</p>
+        <p>Addition {{ paillier.ba }}</p>
+    </div>
+{% endblock %}

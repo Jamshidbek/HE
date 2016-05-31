@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^rsa/(?P<pk>\d+)/$', views.rsa_result, name='rsa_result'),
     url(r'^sezar/$', views.sezar_view, name='sezar'),
     url(r'^sezar/(?P<pk>\d+)/$', views.sezar_result, name='sezar_result'),
+    url(r'^paillier/$', views.paillier_view, name='paillier'),
+    url(r'^paillier/(?P<pk>\d+)/$', views.paillier_result, name='paillier_result'),
 ]

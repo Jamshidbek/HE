@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import RSA, Sezar
+from .models import RSA, Sezar, Paillier
 
 
 class RSAAdmin(admin.ModelAdmin):
@@ -16,5 +16,13 @@ class SezarAdmin(admin.ModelAdmin):
     save_on_top = True
 
 
+class PaillierAdmin(admin.ModelAdmin):
+    list_display = ['title']
+    list_filter = ['a1b1']
+    search_fields = ['title']
+    save_on_top = True
+
+
 admin.site.register(RSA, RSAAdmin)
 admin.site.register(Sezar, SezarAdmin)
+admin.site.register(Paillier, PaillierAdmin)

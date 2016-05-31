@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import RSA, Sezar
-from .forms import RSAForm, SezarForm
+from .models import RSA, Sezar, Paillier
+from .forms import RSAForm, SezarForm, PaillierForm
 from .paillier import *
 
 
@@ -54,13 +54,6 @@ def sezar_view(request):
             for j in sezar.b:
                 b1 += chr(ord(j) + int(sezar.k))
 
-            # a2 = ''
-            # b2 = ''
-            # for i in a1:
-            #     a2 += chr(ord(i) - c)
-            # for j in b1:
-            #     b2 += chr(ord(j) - c)
-
             sezar.a1 = a1
             sezar.b1 = b1
             sezar.a1b1 = sezar.a1 + sezar.b1
@@ -80,3 +73,29 @@ def sezar_view(request):
 def sezar_result(request, pk):
     sezar = get_object_or_404(Sezar, pk=pk)
     return render(request, 'algorithm/sezar_result.html', {'sezar': sezar})
+
+
+def paillier_view(request):
+    if request.method == "POST":
+        form = PaillierForm(request.POST)
+        if form.is_valid():
+            paillier = form.save(commit=False)
+            paillier.author = request.user
+            paillier.title = "Paillier"
+            paillier.ab = int(paillier.a) + int(paillier.b)
+            paillier.priv, paillier.pub = generate_keypair(128)
+            paillier.a1 = encrypt(paillier.pub, int(paillier.a))
+            paillier.b1 = encrypt(paillier.pub, int(paillier.b))
+            paillier.a1b1 = e_add(paillier.pub, paillier.a1, paillier.b1)
+            paillier.ba = decrypt(paillier.priv, paillier.pub, paillier.a1b1)
+
+            paillier.save()
+            return redirect('paillier_result', pk=paillier.pk)
+    else:
+        form = PaillierForm()
+    return render(request, 'algorithm/paillier.html', {'form': form})
+
+
+def paillier_result(request, pk):
+    paillier = get_object_or_404(Paillier, pk=pk)
+    return render(request, 'algorithm/paillier_result.html', {'paillier': paillier})

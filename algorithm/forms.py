@@ -1,5 +1,5 @@
 from django import forms
-from .models import RSA, Sezar
+from .models import RSA, Sezar, Paillier
 
 
 class RSAForm(forms.ModelForm):
@@ -23,4 +23,14 @@ class SezarForm(forms.ModelForm):
             'a',
             'b',
             'k',
+        )
+
+
+class PaillierForm(forms.ModelForm):
+
+    class Meta:
+        model = Paillier
+        fields = (
+            'a',
+            'b',
         )

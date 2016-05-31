@@ -62,18 +62,18 @@ class Sezar(models.Model):
         return self.title
 
 
-# class Paillier(models.Model):
-#     author = models.ForeignKey('auth.User')
-#     title = models.CharField(max_length=200, blank=True, null=True)
-#     a = models.CharField(max_length=200, verbose_name="First number")
-#     b = models.CharField(max_length=200, verbose_name="second number")
-#     ab = models.CharField(max_length=200, blank=True, null=True, verbose_name="Multiples of two number")
-#     pub = models.CharField(max_length=200, blank=True, null=True, verbose_name="Public key")
-#     priv = models.CharField(max_length=200, blank=True, null=True, verbose_name="Private key")
-#     a1 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Encrypted first number")
-#     b1 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Encrypted second number")
-#     a1b1 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Addition of encrypted two number")
-#     ba = models.CharField(max_length=200, blank=True, null=True, verbose_name="Decrypt")
-#
-#     def __str__(self):
-#         return self.title
+class Paillier(models.Model):
+    author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=200, blank=True, null=True)
+    a = models.CharField(max_length=200, verbose_name="First number")
+    b = models.CharField(max_length=200, verbose_name="second number")
+    ab = models.CharField(max_length=200, blank=True, null=True, verbose_name="Multiples of two number")
+    pub = models.CharField(max_length=200, blank=True, null=True, verbose_name="Public key")
+    priv = models.CharField(max_length=200, blank=True, null=True, verbose_name="Private key")
+    a1 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Encrypted first number")
+    b1 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Encrypted second number")
+    a1b1 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Addition of encrypted two number")
+    ba = models.CharField(max_length=200, blank=True, null=True, verbose_name="Decrypt")
+
+    def __str__(self):
+        return self.title
