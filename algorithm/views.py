@@ -25,6 +25,7 @@ def rsa_view(request):
             rsa.b2 = pow(int(rsa.b1), int(rsa.e), rsa.n)
             rsa.a1b1 = int(rsa.a1)*int(rsa.b1)
             rsa.a2b2 = int(rsa.a2)*int(rsa.b2)
+            rsa.ba = pow(int(rsa.a2b2), int(rsa.d), rsa.n)
 
             rsa.save()
             return redirect('rsa_result', pk=rsa.pk)

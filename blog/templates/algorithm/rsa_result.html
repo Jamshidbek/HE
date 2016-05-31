@@ -2,6 +2,19 @@
 
 {% block content %}
     <div>
-        <p>{{ rsa.a2b2 }}</p>
+        <h1 style="text-align: center;">RSA</h1>
+        <hr style="clear:both;"/>
+
+        <h3 style="text-align:left;float:left;">First number: {{ rsa.a1 }}</h3>
+        <h3 style="text-align:right;float:right;">Encrypted: {{ rsa.a2 }}</h3>
+        <hr style="clear:both;"/>
+
+        <h3 style="text-align:left;float:left;">Second number: {{ rsa.b1 }}</h3>
+        <h3 style="text-align:right;float:right;">Encrypted: {{ rsa.b2 }}</h3>
+        <hr style="clear:both;"/>
+
+        <h3 style="text-align:left;float:left;">Multiples of encrypted two numbers: {{ rsa.a2b2 }}</h3>
+        <h3 style="text-align:right;float:right;">Decrypt: {{ rsa.ba }}</h3>
+        <hr style="clear:both;"/>
     </div>
 {% endblock %}

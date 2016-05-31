@@ -2,7 +2,12 @@
 
 {% block content %}
     <div class="post">
-        <h1><a href="{% url 'post_list' %}">Blogs</a></h1>
         <h1><a href="{% url 'algorithm_list' %}">Encryption</a></h1>
+        <p class="about">Homomorphic Encryption</p>
+        <hr style="clear:both;"/>
+
+        <h1><a href="{% url 'post_list' %}">Blog</a></h1>
+        <p class="about">Blog: Information Security</p>
+        <hr style="clear:both;"/>
     </div>
 {% endblock %}

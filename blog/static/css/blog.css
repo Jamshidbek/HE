@@ -30,6 +30,16 @@ h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
 }
 
+.about {
+    font-family: Roboto;
+    font-size: 14pt;
+}
+
+.post-text {
+    font-family: Roboto;
+    font-size: 12pt;
+}
+
 .date {
     color: #828282;
 }

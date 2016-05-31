@@ -2,13 +2,19 @@
 
 {% block content %}
     <div>
-        <p>A: {{ paillier.a }}</p>
-        <p>B: {{ paillier.b }}</p>
-        <p>Public key: {{ paillier.pub }}</p>
-        <p>Private key: {{ paillier.priv }}</p>
-        <p>A1: {{ paillier.a1 }}</p>
-        <p>B1: {{ paillier.b1 }}</p>
-        <p>A1 + B1: {{ paillier.a1b1 }}</p>
-        <p>Addition {{ paillier.ba }}</p>
+        <h1 style="text-align: center;">Paillier</h1>
+        <hr style="clear:both;"/>
+
+        <h3>First number: {{ paillier.a }}</h3>
+        <h4>Encrypted: {{ paillier.a1 }}</h4>
+        <hr style="clear:both;"/>
+
+        <h3>Second number: {{ paillier.b }}</h3>
+        <h4>Encrypted: {{ paillier.b1 }}</h4>
+        <hr style="clear:both;"/>
+
+        <h4>Addition of encrypted two number: {{ paillier.a1b1 }}</h4>
+        <h3>Decrypt: {{ paillier.ba }}</h3>
+        <hr style="clear:both;"/>
     </div>
 {% endblock %}

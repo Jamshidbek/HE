@@ -2,7 +2,19 @@
 
 {% block content %}
     <div>
-        <p>{{ sezar.a1b1 }}</p>
-        <p>{{ sezar.ba }}</p>
+        <h1 style="text-align: center;">Sezar</h1>
+        <hr style="clear:both;"/>
+
+        <h3 style="text-align:left;float:left;">First word: {{ sezar.a }}</h3>
+        <h3 style="text-align:right;float:right;">Encrypted: {{ sezar.a1 }}</h3>
+        <hr style="clear:both;"/>
+
+        <h3 style="text-align:left;float:left;">Second word: {{ sezar.b }}</h3>
+        <h3 style="text-align:right;float:right;">Encrypted: {{ sezar.b1 }}</h3>
+        <hr style="clear:both;"/>
+
+        <h3 style="text-align:left;float:left;">Addition of encrypted two words: {{ sezar.a1b1 }}</h3>
+        <h3 style="text-align:right;float:right;">Decrypt: {{ sezar.ba }}</h3>
+        <hr style="clear:both;"/>
     </div>
 {% endblock %}
