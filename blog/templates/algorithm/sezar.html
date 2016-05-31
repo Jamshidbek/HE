@@ -1,9 +1,15 @@
 {% extends 'algorithm/base.html' %}
 
 {% block content %}
-    <h1>Sezar</h1>
+    <h1 style="text-align: center;">Sezar</h1>
+    <hr style="clear:both;"/>
+    {% if not user.is_authenticated %}
+        <p class="error-text">Sorry. You are not authorized to perform this operation</p>
+    {% endif %}
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Submit</button>
+        {% if user.is_authenticated %}
+            <button type="submit" class="save btn btn-default">Submit</button>
+        {% endif %}
     </form>
 {% endblock %}

@@ -35,6 +35,12 @@ h1, h2, h3, h4 {
     font-size: 14pt;
 }
 
+.error-text {
+    font-family: Roboto;
+    font-size: 14pt;
+    color: red;
+}
+
 .post-text {
     font-family: Roboto;
     font-size: 12pt;
