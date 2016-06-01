@@ -3,6 +3,21 @@ from .models import RSA, Sezar, Paillier
 
 
 class RSAAdmin(admin.ModelAdmin):
+    fields = [
+        'author',
+        'title',
+        'e',
+        'd',
+        'public_key',
+        'private_key',
+        'a1',
+        'b1',
+        'a2',
+        'b2',
+        'a1b1',
+        'a2b2',
+        'ba',
+    ]
     list_display = ['title']
     list_filter = ['a1b1', 'a2b2']
     search_fields = ['title']

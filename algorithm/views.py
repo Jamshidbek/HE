@@ -15,10 +15,9 @@ def rsa_view(request):
             rsa = form.save(commit=False)
             rsa.author = request.user
             rsa.title = "RSA"
-            rsa.text = "Authors of RSA: Rivest, Shamir and Adleman"
-            rsa.n = int(rsa.p) * int(rsa.q)
-            rsa.f = (int(rsa.p)-1) * (int(rsa.q)-1)
-            rsa.d = rsa.evklid(rsa.f, int(rsa.e))
+            rsa.e = 0x5abb
+            rsa.d = 0x1146bd07f0b74c086df00b37c602a0b
+            rsa.n = 0x1d7777c38863aec21ba2d91ee0faf51
             rsa.public_key = '({0}, {1})'.format(rsa.e, rsa.n)
             rsa.private_key = '({0}, {1})'.format(rsa.d, rsa.n)
             rsa.a2 = pow(int(rsa.a1), int(rsa.e), rsa.n)
@@ -26,6 +25,9 @@ def rsa_view(request):
             rsa.a1b1 = int(rsa.a1)*int(rsa.b1)
             rsa.a2b2 = int(rsa.a2)*int(rsa.b2)
             rsa.ba = pow(int(rsa.a2b2), int(rsa.d), rsa.n)
+            # rsa.n = int(rsa.p) * int(rsa.q)
+            # rsa.f = (int(rsa.p)-1) * (int(rsa.q)-1)
+            # rsa.d = rsa.evklid(rsa.f, int(rsa.e))
 
             rsa.save()
             return redirect('rsa_result', pk=rsa.pk)
